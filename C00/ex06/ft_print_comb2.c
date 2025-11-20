@@ -6,14 +6,15 @@
 /*   By: mel-bakh <mel-bakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 17:07:49 by mel-bakh          #+#    #+#             */
-/*   Updated: 2025/08/15 20:04:57 by mel-bakh         ###   ########.fr       */
+/*   Updated: 2025/11/20 21:43:12 by mel-bakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c ){
-	write(1, &c , 1) ;
+void	ft_putchar(char c )
+{
+	write(1,&c,1) ;
 }
 
 
@@ -40,10 +41,4 @@ void	ft_print_comb2(void){
 		a++ ;
 	}
 	
-}
-
-
-int main(void){
-	ft_print_comb2() ;
-	return 0 ;
 }

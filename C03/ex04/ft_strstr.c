@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-bakh <mel-bakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 16:46:50 by mel-bakh          #+#    #+#             */
-/*   Updated: 2025/11/20 21:29:05 by mel-bakh         ###   ########.fr       */
+/*   Created: 2025/08/26 01:37:56 by mel-bakh          #+#    #+#             */
+/*   Updated: 2025/08/31 14:54:57 by mel-bakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+char	*ft_strstr(char *str, char *to_find)
+{
+	char	*s;
+	char	*f;
 
-void	ft_putchar(char c){
-	write(1, &c , 1) ;
-}
-
-
-void	ft_putnbr(int nb){
-	
-	if(nb == -2147483648)
+	if (*to_find == '\0')
+		return (str);
+	while (*str)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		s = str;
+		f = to_find;
+		while (*s && *f && (*s == *f))
+		{
+			s++;
+			f++;
+		}
+		if (*f == '\0')
+			return (str);
+		str++;
 	}
-
-	if (nb < 0){
-		write(1, "-", 1);
-		nb = -nb ;
-		 
-	} 
-
-	if(nb >= 10){
-		write(1, "hi\n" , 2) ; 
-		ft_putnbr(nb / 10) ; 
-	}
-	ft_putchar((nb % 10) + '0');
-	
+	return (0);
 }

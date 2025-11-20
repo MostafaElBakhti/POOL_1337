@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-bakh <mel-bakh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/14 16:46:50 by mel-bakh          #+#    #+#             */
-/*   Updated: 2025/11/20 21:29:05 by mel-bakh         ###   ########.fr       */
+/*   Created: 2025/09/02 15:13:20 by mel-bakh          #+#    #+#             */
+/*   Updated: 2025/09/03 19:21:45 by mel-bakh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c){
-	write(1, &c , 1) ;
-}
+int	main(int argc, char **argv)
+{
+	int	i;
+	int	j;
 
-
-void	ft_putnbr(int nb){
-	
-	if(nb == -2147483648)
+	i = 1;
+	while (i < argc)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		j = 0;
+		while (argv[i][j])
+		{
+			write(1, &argv[i][j], 1);
+			j++;
+		}
+		write(1, "\n", 1);
+		i++;
 	}
-
-	if (nb < 0){
-		write(1, "-", 1);
-		nb = -nb ;
-		 
-	} 
-
-	if(nb >= 10){
-		write(1, "hi\n" , 2) ; 
-		ft_putnbr(nb / 10) ; 
-	}
-	ft_putchar((nb % 10) + '0');
-	
+	return (0);
 }

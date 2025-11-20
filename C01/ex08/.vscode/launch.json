@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/mel-bakh/Desktop/C00/ex05",
-      "program": "/Users/mel-bakh/Desktop/C00/ex05/build/Debug/outDebug"
+      "cwd": "/Users/mel-bakh/Desktop/Days_repo/C01/ex08",
+      "program": "/Users/mel-bakh/Desktop/Days_repo/C01/ex08/build/Debug/outDebug"
     }
   ]
 }
